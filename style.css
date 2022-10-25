@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    --font-size: .875rem;
+
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-fraunces: 'Fraunces', serif;
+}
+
+
+
+html {
+    box-sizing: border-box;
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Global */
+body {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    background-color: var(--cream);
+    font-size: var(--font-size);
+
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    max-width: var(--mobile-width);
+    border-radius: var(--font-size);
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+@media screen and (min-width:600px) {
+    .card {
+        flex-direction: row;
+        max-width: 550px;
+        width: 100%;
+    }
+
+}
+
+.card--image-mobile {
+    object-fit: cover;
+}
+
+.card--image-desktop {
+    display: none;
+    object-fit: cover;
+}
+
+@media screen and (min-width:600px) {
+    .card--image-mobile {
+        display: none;
+    }
+
+    .card--image-desktop {
+        display: block;
+        width: 50%;
+    }
+
+}
+
+.card--container {
+    padding: 1.5rem;
+}
+
+.card--category {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--dark-grayish-blue);
+    font-size: var(--font-size);
+    font-weight: 300;
+}
+
+.card--title {
+    font-family: var(--font-fraunces);
+    font-weight: 700;
+    font-size: 2.125rem;
+}
+
+.card--description {
+    color: var(--dark-grayish-blue);
+    line-height: 1.6;
+
+}
+
+.card--price-container {
+    display: flex;
+    gap: 1.125rem;
+}
+
+.card--price_discount {
+    margin-top: 0;
+    font-family: var(--font-fraunces);
+    color: var(--dark-cyan);
+    font-size: 2rem;
+}
+
+.card--price_old {
+    color: var(--dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+.card--btn {
+    display: flex;
+    padding: var(--font-size);
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-cyan);
+    font-size: var(--font-size);
+    border-radius: .625rem;
+}
+
+.card--btn-icon {
+    margin-right: .3125rem;
+}
+
+.card--btn:hover {
+    background-color: var(--very-dark-blue);
+}
